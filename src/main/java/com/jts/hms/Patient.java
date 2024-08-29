@@ -61,5 +61,17 @@ public class Patient {
         }
     }
 
+    public boolean getPatientById(int id) throws SQLException{
+        String query = "select count(1) from patients where id = ?";
+
+        try (PreparedStatement ps = conn.prepareStatement(query)){
+            ps.setInt(1, id);
+
+            try(ResultSet rs = ps.executeQuery()){
+                return rs.next();
+            }
+        }
+    }
+
 
 }
