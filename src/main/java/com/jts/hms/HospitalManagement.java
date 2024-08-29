@@ -10,6 +10,10 @@ public class HospitalManagement {
         Scanner sc = new Scanner(System.in);
 
         try(Connection conn = DatabaseService.getConnection()){
+            Patient patient = new Patient(conn);
+            Doctor doctor = new Doctor(conn);
+
+
             while (true){
                 System.out.println("=== Hospital Management System ===");
                 System.out.println("1. Add Patient");
@@ -25,18 +29,21 @@ public class HospitalManagement {
                 switch (ch){
                     case 1:{
                         // add patients
+                        patient.addPatient();
                         break;
                     }
                     case 2:{
-                        // add doctors
+                        doctor.addDoctor();
                         break;
                     }
                     case 3:{
                         // View Patients
+                        patient.viewPatients();
                         break;
                     }
                     case 4:{
                         // View Doctors
+                        doctor.viewDoctors();
                         break;
                     }
                     case 5:{

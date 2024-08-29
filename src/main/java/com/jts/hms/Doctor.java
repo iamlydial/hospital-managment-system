@@ -13,7 +13,7 @@ public class Doctor {
         this.conn = conn;
     }
 
-    public void addPatient() throws SQLException {
+    public void addDoctor() throws SQLException {
         System.out.print("Enter Doctor name: ");
         String name = sc.next();
 
@@ -28,7 +28,7 @@ public class Doctor {
             ps.setString(2, department);
 
             if(ps.execute()){
-                System.out.println("Patient details added successfully");
+                System.out.println("Doctor details added successfully");
             } else {
                 System.out.println("Failed to add doctor details");
             }
