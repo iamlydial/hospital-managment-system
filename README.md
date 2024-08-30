@@ -12,8 +12,7 @@ A simple Java-based application for managing a hospital's operations, including 
 - [Usage](#usage)
 - [Database Schema](#database-schema)
 - [Environment Variables](#environment-variables)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Introduction
 
