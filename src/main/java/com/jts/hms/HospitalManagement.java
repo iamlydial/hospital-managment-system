@@ -12,6 +12,7 @@ public class HospitalManagement {
         try(Connection conn = DatabaseService.getConnection()){
             Patient patient = new Patient(conn);
             Doctor doctor = new Doctor(conn);
+            BookAppointment bookAppointment = new BookAppointment(conn, patient, doctor);
 
 
             while (true){
@@ -20,6 +21,7 @@ public class HospitalManagement {
                 System.out.println("2. Add Doctor");
                 System.out.println("3. View Patients");
                 System.out.println("4. View Doctors");
+                System.out.println("5. Book Appointment");
                 System.out.println("6. Exit");
 
                 System.out.println("Enter your choice: ");
@@ -48,6 +50,7 @@ public class HospitalManagement {
                     }
                     case 5:{
                         // Book Appointment
+                        bookAppointment.bookAppointment();
                         break;
                     }
                     case 6:{
